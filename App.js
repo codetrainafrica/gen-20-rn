@@ -13,13 +13,18 @@ import Cat from "./assets/cat.jpeg";
 import FlexLayout from "./src/components/FlexLayout";
 import LayoutOne from "./src/components/LayoutOne";
 import LayoutTwo from "./src/components/LayoutTwo";
-
+import Form from "./src/components/Form";
+import ScrollView from "./src/components/ScrollView";
+import Flatlist from "./src/components/Flatlist";
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* // <FlexLayout /> */}
       {/* <LayoutOne /> */}
-      <LayoutTwo />
+      {/* <LayoutTwo /> */}
+      {/* <Form /> */}
+      {/* <ScrollView /> */}
+      <Flatlist />
     </SafeAreaView>
   );
 };
