@@ -1,37 +1,31 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  Button,
-  TouchableOpacity,
-  TextInput,
-  StyleSheet,
-} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Cat from "./assets/cat.jpeg";
-import FlexLayout from "./src/components/FlexLayout";
-import LayoutOne from "./src/components/LayoutOne";
-import LayoutTwo from "./src/components/LayoutTwo";
-import Form from "./src/components/Form";
-import ScrollView from "./src/components/ScrollView";
-import Flatlist from "./src/components/Flatlist";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./src/screens/Home";
+import Profile from "./src/screens/Profile";
+import Settings from "./src/screens/Settings";
+import Details from "./src/screens/Details";
+import Main from "./src/screens/Main";
+
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      {/* // <FlexLayout /> */}
-      {/* <LayoutOne /> */}
-      {/* <LayoutTwo /> */}
-      {/* <Form /> */}
-      {/* <ScrollView /> */}
-      <Flatlist />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 100,
+    flex: 1,
   },
 });
 
